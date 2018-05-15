@@ -1,0 +1,12 @@
+PODS:
+  - MGSwipeTableCell (1.5.6)
+
+DEPENDENCIES:
+  - MGSwipeTableCell
+
+SPEC CHECKSUMS:
+  MGSwipeTableCell: 616700eb0ffd1c611ba909066cb7fd739790a0a7
+
+PODFILE CHECKSUM: 0c9bee6ed22519bf2a62703bbac7bb9d52912a11
+
+COCOAPODS: 1.2.0

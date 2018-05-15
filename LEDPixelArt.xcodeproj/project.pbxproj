@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171FC49A1E6DCD3500F830CE /* BluetoothSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171FC4951E6DCD3500F830CE /* BluetoothSerial.swift */; };
+		171FC49B1E6DCD3500F830CE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 171FC4971E6DCD3500F830CE /* MBProgressHUD.m */; };
+		171FC49C1E6DCD3500F830CE /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171FC4981E6DCD3500F830CE /* ScannerViewController.swift */; };
 		17F4DD0A1E4A2E9D000110BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F4DD091E4A2E9D000110BA /* AppDelegate.swift */; };
-		17F4DD0C1E4A2E9D000110BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F4DD0B1E4A2E9D000110BA /* ViewController.swift */; };
 		17F4DD0F1E4A2E9D000110BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F4DD0D1E4A2E9D000110BA /* Main.storyboard */; };
 		17F4DD121E4A2E9D000110BA /* LEDPixelArt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17F4DD101E4A2E9D000110BA /* LEDPixelArt.xcdatamodeld */; };
 		17F4DD141E4A2E9D000110BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F4DD131E4A2E9D000110BA /* Assets.xcassets */; };
 		17F4DD171E4A2E9D000110BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F4DD151E4A2E9D000110BA /* LaunchScreen.storyboard */; };
 		17F4DD221E4A2E9D000110BA /* LEDPixelArtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F4DD211E4A2E9D000110BA /* LEDPixelArtTests.swift */; };
 		17F4DD2D1E4A2E9D000110BA /* LEDPixelArtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F4DD2C1E4A2E9D000110BA /* LEDPixelArtUITests.swift */; };
+		17F4DD3B1E4A2F12000110BA /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F4DD3A1E4A2F12000110BA /* GridViewController.swift */; };
+		17F4DD3D1E4B86D8000110BA /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F4DD3C1E4B86D7000110BA /* SavedViewController.swift */; };
+		3910B6A0CB5DDF127480B1A0 /* Pods_LEDPixelArt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63717F9218206817BCCC0825 /* Pods_LEDPixelArt.framework */; };
+		8557F0584041359C573AB6BF /* Pods_LEDPixelArtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C89F81AD682D3D764D6B6F /* Pods_LEDPixelArtTests.framework */; };
+		B3331CF4137C997E15365AA0 /* Pods_LEDPixelArtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C21C0C2327ADEC0347D053AC /* Pods_LEDPixelArtUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EA7FB080B1A28DE7991369D /* Pods-LEDPixelArtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDPixelArtTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEDPixelArtTests/Pods-LEDPixelArtTests.release.xcconfig"; sourceTree = "<group>"; };
+		171FC4941E6DCD3400F830CE /* LEDPixelArt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LEDPixelArt-Bridging-Header.h"; sourceTree = "<group>"; };
+		171FC4951E6DCD3500F830CE /* BluetoothSerial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothSerial.swift; sourceTree = "<group>"; };
+		171FC4961E6DCD3500F830CE /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		171FC4971E6DCD3500F830CE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		171FC4981E6DCD3500F830CE /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		17F4DD061E4A2E9C000110BA /* LEDPixelArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEDPixelArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F4DD091E4A2E9D000110BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		17F4DD0B1E4A2E9D000110BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		17F4DD0E1E4A2E9D000110BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17F4DD111E4A2E9D000110BA /* LEDPixelArt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LEDPixelArt.xcdatamodel; sourceTree = "<group>"; };
 		17F4DD131E4A2E9D000110BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +61,16 @@
 		17F4DD281E4A2E9D000110BA /* LEDPixelArtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEDPixelArtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F4DD2C1E4A2E9D000110BA /* LEDPixelArtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEDPixelArtUITests.swift; sourceTree = "<group>"; };
 		17F4DD2E1E4A2E9D000110BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F4DD3A1E4A2F12000110BA /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		17F4DD3C1E4B86D7000110BA /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		2CA0C8BF9ABDC68562BE20EC /* Pods-LEDPixelArtUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDPixelArtUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEDPixelArtUITests/Pods-LEDPixelArtUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		63717F9218206817BCCC0825 /* Pods_LEDPixelArt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEDPixelArt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C777AC01CDD890DB4380395 /* Pods-LEDPixelArt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDPixelArt.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEDPixelArt/Pods-LEDPixelArt.release.xcconfig"; sourceTree = "<group>"; };
+		81C89F81AD682D3D764D6B6F /* Pods_LEDPixelArtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEDPixelArtTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		862A1E8F27C731401E87C7D6 /* Pods-LEDPixelArtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDPixelArtTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEDPixelArtTests/Pods-LEDPixelArtTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A923E38DBABD4859F40F47C7 /* Pods-LEDPixelArtUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDPixelArtUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LEDPixelArtUITests/Pods-LEDPixelArtUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C21C0C2327ADEC0347D053AC /* Pods_LEDPixelArtUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEDPixelArtUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C723BF97ACE51BD2F2ADA135 /* Pods-LEDPixelArt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEDPixelArt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LEDPixelArt/Pods-LEDPixelArt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3910B6A0CB5DDF127480B1A0 /* Pods_LEDPixelArt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8557F0584041359C573AB6BF /* Pods_LEDPixelArtTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3331CF4137C997E15365AA0 /* Pods_LEDPixelArtUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +108,8 @@
 				17F4DD201E4A2E9D000110BA /* LEDPixelArtTests */,
 				17F4DD2B1E4A2E9D000110BA /* LEDPixelArtUITests */,
 				17F4DD071E4A2E9C000110BA /* Products */,
+				F0930960297CA36121296909 /* Pods */,
+				C1304F6D82C2172FF1CCE5B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +126,19 @@
 		17F4DD081E4A2E9D000110BA /* LEDPixelArt */ = {
 			isa = PBXGroup;
 			children = (
+				171FC4951E6DCD3500F830CE /* BluetoothSerial.swift */,
+				171FC4961E6DCD3500F830CE /* MBProgressHUD.h */,
+				171FC4971E6DCD3500F830CE /* MBProgressHUD.m */,
+				171FC4981E6DCD3500F830CE /* ScannerViewController.swift */,
+				17F4DD3A1E4A2F12000110BA /* GridViewController.swift */,
+				17F4DD3C1E4B86D7000110BA /* SavedViewController.swift */,
 				17F4DD091E4A2E9D000110BA /* AppDelegate.swift */,
-				17F4DD0B1E4A2E9D000110BA /* ViewController.swift */,
 				17F4DD0D1E4A2E9D000110BA /* Main.storyboard */,
 				17F4DD131E4A2E9D000110BA /* Assets.xcassets */,
 				17F4DD151E4A2E9D000110BA /* LaunchScreen.storyboard */,
 				17F4DD181E4A2E9D000110BA /* Info.plist */,
 				17F4DD101E4A2E9D000110BA /* LEDPixelArt.xcdatamodeld */,
+				171FC4941E6DCD3400F830CE /* LEDPixelArt-Bridging-Header.h */,
 			);
 			path = LEDPixelArt;
 			sourceTree = "<group>";
@@ -128,6 +161,29 @@
 			path = LEDPixelArtUITests;
 			sourceTree = "<group>";
 		};
+		C1304F6D82C2172FF1CCE5B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63717F9218206817BCCC0825 /* Pods_LEDPixelArt.framework */,
+				81C89F81AD682D3D764D6B6F /* Pods_LEDPixelArtTests.framework */,
+				C21C0C2327ADEC0347D053AC /* Pods_LEDPixelArtUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0930960297CA36121296909 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C723BF97ACE51BD2F2ADA135 /* Pods-LEDPixelArt.debug.xcconfig */,
+				6C777AC01CDD890DB4380395 /* Pods-LEDPixelArt.release.xcconfig */,
+				862A1E8F27C731401E87C7D6 /* Pods-LEDPixelArtTests.debug.xcconfig */,
+				0EA7FB080B1A28DE7991369D /* Pods-LEDPixelArtTests.release.xcconfig */,
+				2CA0C8BF9ABDC68562BE20EC /* Pods-LEDPixelArtUITests.debug.xcconfig */,
+				A923E38DBABD4859F40F47C7 /* Pods-LEDPixelArtUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17F4DD311E4A2E9D000110BA /* Build configuration list for PBXNativeTarget "LEDPixelArt" */;
 			buildPhases = (
+				E3D9C85D419399ACFD88C8D6 /* [CP] Check Pods Manifest.lock */,
 				17F4DD021E4A2E9C000110BA /* Sources */,
 				17F4DD031E4A2E9C000110BA /* Frameworks */,
 				17F4DD041E4A2E9C000110BA /* Resources */,
+				7F8A469DB12BA882C74477F8 /* [CP] Embed Pods Frameworks */,
+				32F58D24CF76AD215ED4EF94 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17F4DD341E4A2E9D000110BA /* Build configuration list for PBXNativeTarget "LEDPixelArtTests" */;
 			buildPhases = (
+				1B41A3941B45C5FE05FD2639 /* [CP] Check Pods Manifest.lock */,
 				17F4DD191E4A2E9D000110BA /* Sources */,
 				17F4DD1A1E4A2E9D000110BA /* Frameworks */,
 				17F4DD1B1E4A2E9D000110BA /* Resources */,
+				012E6D56B3EE4BD70264D0F7 /* [CP] Embed Pods Frameworks */,
+				121B0D6B0EC763D39E6E0A20 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17F4DD371E4A2E9D000110BA /* Build configuration list for PBXNativeTarget "LEDPixelArtUITests" */;
 			buildPhases = (
+				3845917282FE13116EF0F2D2 /* [CP] Check Pods Manifest.lock */,
 				17F4DD241E4A2E9D000110BA /* Sources */,
 				17F4DD251E4A2E9D000110BA /* Frameworks */,
 				17F4DD261E4A2E9D000110BA /* Resources */,
+				810B5DDBD5B9AF402ED76B4A /* [CP] Embed Pods Frameworks */,
+				3911508FA3F00A0A2FD90ACF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,23 +256,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Florian Sorin";
 				TargetAttributes = {
 					17F4DD051E4A2E9C000110BA = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 63Y3TYQDLZ;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 					17F4DD1C1E4A2E9D000110BA = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 63Y3TYQDLZ;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 17F4DD051E4A2E9C000110BA;
 					};
 					17F4DD271E4A2E9D000110BA = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 63Y3TYQDLZ;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 17F4DD051E4A2E9C000110BA;
 					};
@@ -260,14 +328,156 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		012E6D56B3EE4BD70264D0F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDPixelArtTests/Pods-LEDPixelArtTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		121B0D6B0EC763D39E6E0A20 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDPixelArtTests/Pods-LEDPixelArtTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B41A3941B45C5FE05FD2639 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		32F58D24CF76AD215ED4EF94 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDPixelArt/Pods-LEDPixelArt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3845917282FE13116EF0F2D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3911508FA3F00A0A2FD90ACF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDPixelArtUITests/Pods-LEDPixelArtUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F8A469DB12BA882C74477F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDPixelArt/Pods-LEDPixelArt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		810B5DDBD5B9AF402ED76B4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LEDPixelArtUITests/Pods-LEDPixelArtUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3D9C85D419399ACFD88C8D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		17F4DD021E4A2E9C000110BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17F4DD0C1E4A2E9D000110BA /* ViewController.swift in Sources */,
+				171FC49C1E6DCD3500F830CE /* ScannerViewController.swift in Sources */,
 				17F4DD0A1E4A2E9D000110BA /* AppDelegate.swift in Sources */,
+				171FC49B1E6DCD3500F830CE /* MBProgressHUD.m in Sources */,
 				17F4DD121E4A2E9D000110BA /* LEDPixelArt.xcdatamodeld in Sources */,
+				17F4DD3D1E4B86D8000110BA /* SavedViewController.swift in Sources */,
+				17F4DD3B1E4A2F12000110BA /* GridViewController.swift in Sources */,
+				171FC49A1E6DCD3500F830CE /* BluetoothSerial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,15 +541,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -380,15 +598,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -415,32 +641,46 @@
 		};
 		17F4DD321E4A2E9D000110BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C723BF97ACE51BD2F2ADA135 /* Pods-LEDPixelArt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 63Y3TYQDLZ;
 				INFOPLIST_FILE = LEDPixelArt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.floso.LEDPixelArt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.floso2903.LEDPixelArt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "LEDPixelArt/LEDPixelArt-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		17F4DD331E4A2E9D000110BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C777AC01CDD890DB4380395 /* Pods-LEDPixelArt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 63Y3TYQDLZ;
 				INFOPLIST_FILE = LEDPixelArt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.floso.LEDPixelArt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.floso2903.LEDPixelArt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "LEDPixelArt/LEDPixelArt-Bridging-Header.h";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		17F4DD351E4A2E9D000110BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 862A1E8F27C731401E87C7D6 /* Pods-LEDPixelArtTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -449,13 +689,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.floso.LEDPixelArtTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEDPixelArt.app/LEDPixelArt";
 			};
 			name = Debug;
 		};
 		17F4DD361E4A2E9D000110BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EA7FB080B1A28DE7991369D /* Pods-LEDPixelArtTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -464,13 +706,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.floso.LEDPixelArtTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEDPixelArt.app/LEDPixelArt";
 			};
 			name = Release;
 		};
 		17F4DD381E4A2E9D000110BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CA0C8BF9ABDC68562BE20EC /* Pods-LEDPixelArtUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 63Y3TYQDLZ;
@@ -478,13 +722,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.floso.LEDPixelArtUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = LEDPixelArt;
 			};
 			name = Debug;
 		};
 		17F4DD391E4A2E9D000110BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A923E38DBABD4859F40F47C7 /* Pods-LEDPixelArtUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 63Y3TYQDLZ;
@@ -492,7 +738,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.floso.LEDPixelArtUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = LEDPixelArt;
 			};
 			name = Release;
@@ -516,6 +763,7 @@
 				17F4DD331E4A2E9D000110BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17F4DD341E4A2E9D000110BA /* Build configuration list for PBXNativeTarget "LEDPixelArtTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +772,7 @@
 				17F4DD361E4A2E9D000110BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17F4DD371E4A2E9D000110BA /* Build configuration list for PBXNativeTarget "LEDPixelArtUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +781,7 @@
 				17F4DD391E4A2E9D000110BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
