@@ -10,8 +10,7 @@ import UIKit
 import CoreBluetooth
 import QuartzCore
 
-struct pixelArtData
-{
+struct pixelArtData {
     var pixelArtName = "PixelArt"
     var pixelArtGrid = Array(repeating: UInt8(), count: 1024)
     var pixelArtPreview = #imageLiteral(resourceName: "save")
@@ -23,80 +22,63 @@ var RGBGridArray = Array(repeating: UInt8(), count: 1024)
 
 
 // Functions to save and load files (used for UIImage)
-func getDocumentsDirectory() -> URL
-{
+func getDocumentsDirectory() -> URL {
     let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     let documentsDirectory = paths[0]
     return documentsDirectory
 }
-func saveImage(image: UIImage, imageName: String)
-{
+func saveImage(image: UIImage, imageName: String) {
     let fileURL = getDocumentsDirectory().appendingPathComponent(imageName)
     let pngImageData = UIImagePNGRepresentation(image)
     try? pngImageData!.write(to: fileURL)
 }
-func loadImageFromPath(imageName: String) -> UIImage?
-{
+func loadImageFromPath(imageName: String) -> UIImage? {
     let fileURL = getDocumentsDirectory().appendingPathComponent(imageName)
     let image = UIImage(contentsOfFile: fileURL.path)
     return image
 }
 
-//Call when the app is launch to recover previous players names
-func checkMemory()
-{
+// Call when the app is launch to recover saved infos
+func checkMemory() {
     let defaults = UserDefaults.standard
 
-    if let pixelArtDBSizeMemorized = defaults.object(forKey: "pixelArtDBSizeKey") as? Int
-    {
+    if let pixelArtDBSizeMemorized = defaults.object(forKey: "pixelArtDBSizeKey") as? Int {
         pixelArtDBSize = pixelArtDBSizeMemorized
     }
 
-    if pixelArtDBSize != 0
-    {
-        for i in 0...pixelArtDBSize - 1
-        {
+    if pixelArtDBSize != 0 {
+        for i in 0...pixelArtDBSize - 1 {
             pixelArtDB.append(pixelArtData())
             
-            if let nameMemorized = defaults.object(forKey: "pixelArtName\(i)Key") as? String
-            {
+            if let nameMemorized = defaults.object(forKey: "pixelArtName\(i)Key") as? String {
                 pixelArtDB[i].pixelArtName = nameMemorized
             }
             
-            for j in 0...pixelArtDB[i].pixelArtGrid.count - 1
-            {
-                if let colorMemorized = defaults.object(forKey: "pixelArtGrid\(i)\(j)ColorKey") as? UInt8
-                {
+            for j in 0...pixelArtDB[i].pixelArtGrid.count - 1 {
+                if let colorMemorized = defaults.object(forKey: "pixelArtGrid\(i)\(j)ColorKey") as? UInt8 {
                    pixelArtDB[i].pixelArtGrid[j] = colorMemorized
                 }
             }
             
-            if let loadedImage = loadImageFromPath(imageName: "image\(i)")
-            {
+            if let loadedImage = loadImageFromPath(imageName: "image\(i)") {
                 pixelArtDB[i].pixelArtPreview = loadedImage
             }
         }
-    }
-    else
-    {
+    } else {
         pixelArtDB.append(pixelArtData()) // Default value for the first element of the table view
     }
 }
 
 // Update the data stored for the next launching
-func updateMemory()
-{
+func updateMemory() {
     let defaults = UserDefaults.standard
     
     defaults.set(pixelArtDBSize, forKey: "pixelArtDBSizeKey")
     
-    if pixelArtDBSize > 0
-    {
-        for i in 0...pixelArtDBSize - 1
-        {
+    if pixelArtDBSize > 0 {
+        for i in 0...pixelArtDBSize - 1 {
             defaults.set(pixelArtDB[i].pixelArtName, forKey: "pixelArtName\(i)Key")
-            for (index, pixel) in pixelArtDB[i].pixelArtGrid.enumerated()
-            {
+            for (index, pixel) in pixelArtDB[i].pixelArtGrid.enumerated() {
                 defaults.set(pixel, forKey: "pixelArtGrid\(i)\(index)ColorKey")
             }
             saveImage(image: pixelArtDB[i].pixelArtPreview, imageName: "image\(i)")
@@ -104,69 +86,61 @@ func updateMemory()
     }
 }
 
-class GridViewController: UIViewController
-{
+class GridViewController: UIViewController {
+    // Cells parameters (32x32 grid)
     let pixelReuseIdentifier = "pixelCell"
-    let colorReuseIdentifier = "colorCell"
     let pixelCellsPerRow = CGFloat(32)
-    let colorCellsPerRow = CGFloat(4)
     let gridMargin = CGFloat(2)
     let colorCellSize = CGFloat(30)
     
+    // Saving popup
     var saveView = UIView()
     var nameTextField = UITextField()
     var previewImage = UIImage()
     
-    
+    // General buttons
     @IBOutlet weak var connectButton: UIBarButtonItem!
     @IBOutlet weak var ledsGridCollectionView: UICollectionView!
     @IBOutlet weak var selectColorCollectionView: UICollectionView!
     
+    // Color buttons
+    let colorReuseIdentifier = "colorCell"
+    let colorCellsPerRow = CGFloat(4)
     var RGBFromButton = UInt8()
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        // init serial
+        // Init bluetooth
         serial = BluetoothSerial(delegate: self)
         serial.writeType = .withResponse
+        // Load saved elements
         checkMemory()
-        print("pixelArtDBSize: \(pixelArtDBSize)")
-        print("NbOfElements: \(pixelArtDB.count)")
+        // Init view
         initLayout()
-        // colorSlider.setThumbImage(UIImage(named: "SliderCursor")!, for: .normal)
     }
     
-    override func viewDidAppear(_ animated: Bool)
-    {
-        if pixelArtDBSize > 0
-        {
-            // ledsGridCollectionView.reloadItems(at: ledsGridCollectionView.indexPathsForVisibleItems)
-            // ledsGridCollectionView.reloadSections(IndexSet([0]))
+    override func viewDidAppear(_ animated: Bool) {
+        // Update the grid
+        if pixelArtDBSize > 0 {
             ledsGridCollectionView.reloadData()
         }
-        if serial.connectedPeripheral != nil
-        {
+        // Update the bluetooth button asset
+        if serial.connectedPeripheral != nil {
             connectButton.image = #imageLiteral(resourceName: "NoBluetooth")
         }
     }
    
-    @IBAction func manageBluetooth(_ sender: Any)
-    {
-        if serial.connectedPeripheral == nil
-        {
+    @IBAction func manageBluetooth(_ sender: Any) {
+        if serial.connectedPeripheral == nil {
             self.performSegue(withIdentifier: "launchScan", sender: sender)
-        }
-        else
-        {
+        } else {
             serial.disconnect()
             connectButton.image = #imageLiteral(resourceName: "Bluetooth")
         }
     }
     
-    @IBAction func savePixelArtPopUp(_ sender: Any)
-    {
-        // Create the save view
+    @IBAction func savePixelArtPopUp(_ sender: Any) {
+        // Create the save popup
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
         let defaultMargin = CGFloat(20)
@@ -238,14 +212,10 @@ class GridViewController: UIViewController
         self.view.addSubview(saveView)
     }
     
-    @objc func savePixelArt(_ sender: UIButton!)
-    {
-        if !((nameTextField.text?.isEmpty)!)
-        {
-            if pixelArtDBSize != 0
-            {
+    @objc func savePixelArt(_ sender: UIButton!) {
+        if !((nameTextField.text?.isEmpty)!) {
+            if pixelArtDBSize != 0 {
                 pixelArtDB.append(pixelArtData())
-
             }
             pixelArtDB[pixelArtDBSize].pixelArtName = nameTextField.text!
             pixelArtDB[pixelArtDBSize].pixelArtGrid = RGBGridArray
@@ -256,13 +226,11 @@ class GridViewController: UIViewController
         }
     }
     
-    @objc func dismissSavePopUp(_ sender: UIButton!)
-    {
+    @objc func dismissSavePopUp(_ sender: UIButton!) {
         saveView.removeFromSuperview()
     }
     
-    func takeScreenShot(width: CGFloat) -> UIImage
-    {
+    func takeScreenShot(width: CGFloat) -> UIImage {
         let rect = CGRect(x: 0, y: 0, width: ledsGridCollectionView.bounds.size.width, height: ledsGridCollectionView.bounds.size.height)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
         ledsGridCollectionView.drawHierarchy(in: rect, afterScreenUpdates: true)
@@ -271,9 +239,7 @@ class GridViewController: UIViewController
         return resizeImage(image: image!, newWidth: width)
     }
     
-    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage
-    {
-        
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
         let scale = newWidth / image.size.width
         let newHeight = image.size.height * scale
         UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
@@ -284,8 +250,7 @@ class GridViewController: UIViewController
         return newImage!
     }
     
-    @IBAction func sendPixelArt(_ sender: UIButton)
-    {
+    @IBAction func sendPixelArt(_ sender: UIButton) {
         var isSending = true
         
         // Progression HUD
@@ -303,59 +268,43 @@ class GridViewController: UIViewController
         serial.sendBytesToDevice([UInt8(0)])
         
         // Send data line by line
-        for startIndex in 0...63
-        {
-            serial.sendBytesToDevice(Array(RGBGridArray[16*startIndex...16*startIndex + 15]))
+        for startIndex in 0...63 {
+            serial.sendBytesToDevice(Array(RGBGridArray[16 * startIndex...16 * startIndex + 15]))
         }
         
         isSending = false // Tells background thread to hide the progression HUD
     }
     
     
-    @IBAction func clearAllPixels(_ sender: UIButton)
-    {
-        for index in 0...RGBGridArray.count - 1
-        {
+    @IBAction func clearAllPixels(_ sender: UIButton) {
+        for index in 0...RGBGridArray.count - 1 {
             RGBGridArray[index] = 0
         }
-        
         ledsGridCollectionView.reloadData()
-        
     }
-
 }
 
-extension GridViewController: UICollectionViewDelegate
-{
+extension GridViewController: UICollectionViewDelegate {
     // Handle tap events
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
-    {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let index = (indexPath as NSIndexPath).row
-        
-        if collectionView == self.ledsGridCollectionView
-        {
+
+        if collectionView == self.ledsGridCollectionView {
             let cell = ledsGridCollectionView.cellForItem(at: indexPath)!
             cell.backgroundColor = UIColor(red: CGFloat((RGBFromButton & 0b100) >> 2), green: CGFloat((RGBFromButton & 0b010) >> 1), blue: CGFloat(RGBFromButton & 0b001), alpha: 1.0)
             RGBGridArray[index] = RGBFromButton
-        }
-        else
-        {
-            for i in 0...7
-            {
+        } else {
+            for i in 0...7 {
                 let cell = selectColorCollectionView.cellForItem(at:IndexPath(row: i, section: 0))!
                 
-                if i == index
-                {
+                if i == index {
                     cell.layer.borderWidth = 3
-                }
-                else
-                {
+                } else {
                     cell.layer.borderWidth = 0
                 }
             }
             
             RGBFromButton = UInt8(index)
-
         }
     }
 }
@@ -363,25 +312,19 @@ extension GridViewController: UICollectionViewDelegate
 extension GridViewController: UICollectionViewDataSource
 {
     // Tell the collection view how many cells to make
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
-    {
-        if collectionView == self.ledsGridCollectionView
-        {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == self.ledsGridCollectionView {
             return Int(pixelCellsPerRow*pixelCellsPerRow)
-        }
-        else
-        {
+        } else {
             return Int(2*colorCellsPerRow)
         }
     }
     
     // Make a cell for each cell index path
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
-    {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let index = (indexPath as NSIndexPath).row
         
-        if collectionView == self.ledsGridCollectionView
-        {
+        if collectionView == self.ledsGridCollectionView {
             let cellWidth = (ledsGridCollectionView.bounds.width - gridMargin * (pixelCellsPerRow + 1)) / pixelCellsPerRow
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pixelReuseIdentifier, for: indexPath as IndexPath)
             cell.backgroundColor = UIColor(red: CGFloat((RGBGridArray[index] & 0b100) >> 2), green: CGFloat((RGBGridArray[index] & 0b010) >> 1), blue: CGFloat(RGBGridArray[index] & 0b001), alpha: 1.0)
@@ -389,18 +332,12 @@ extension GridViewController: UICollectionViewDataSource
             cell.layer.cornerRadius = 2
             cell.frame.size = CGSize(width: cellWidth, height: cellWidth)
             return cell
-        }
-        else
-        {
-            //let cellWidth = (selectColorCollectionView.bounds.width - colorMargin * (colorCellsPerRow + 1)) / colorCellsPerRow
+        } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: colorReuseIdentifier, for: indexPath as IndexPath)
             cell.backgroundColor = UIColor(red: CGFloat((UInt8(index) & 0b100) >> 2), green: CGFloat((UInt8(index) & 0b010) >> 1), blue: CGFloat(UInt8(index) & 0b001), alpha: 1.0)
-            if index == 0
-            {
+            if index == 0 {
                 cell.layer.borderWidth = 3
-            }
-            else
-            {
+            } else {
                 cell.layer.borderWidth = 0
             }
             cell.layer.borderColor = selectColorCollectionView.backgroundColor?.cgColor
@@ -411,10 +348,8 @@ extension GridViewController: UICollectionViewDataSource
     }
 }
 
-extension GridViewController: UICollectionViewDelegateFlowLayout
-{
-    func initLayout()
-    {
+extension GridViewController: UICollectionViewDelegateFlowLayout {
+    func initLayout() {
         guard let gridFlowLayout = ledsGridCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         let gridItemWidth = (ledsGridCollectionView.bounds.width - gridMargin * (pixelCellsPerRow + 1)) / pixelCellsPerRow
         gridFlowLayout.minimumInteritemSpacing = gridMargin
@@ -426,8 +361,8 @@ extension GridViewController: UICollectionViewDelegateFlowLayout
         gridFlowLayout.itemSize = CGSize(width: gridItemWidth, height: gridItemWidth)
         
         guard let colorFlowLayout = selectColorCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
-        colorFlowLayout.minimumInteritemSpacing = (selectColorCollectionView.bounds.width - colorCellsPerRow*colorCellSize) / (colorCellsPerRow - 1)
-        colorFlowLayout.minimumLineSpacing = selectColorCollectionView.bounds.height  - 2*colorCellSize
+        colorFlowLayout.minimumInteritemSpacing = (selectColorCollectionView.bounds.width - colorCellsPerRow * colorCellSize) / (colorCellsPerRow - 1)
+        colorFlowLayout.minimumLineSpacing = selectColorCollectionView.bounds.height  - 2 * colorCellSize
         colorFlowLayout.sectionInset.top = 0
         colorFlowLayout.sectionInset.bottom = 0
         colorFlowLayout.sectionInset.left = 0
@@ -436,51 +371,41 @@ extension GridViewController: UICollectionViewDelegateFlowLayout
     }
 }
 
-extension GridViewController: UIScrollViewDelegate
-{
-    func viewForZooming(in scrollView: UIScrollView) -> UIView?
-    {
+extension GridViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.ledsGridCollectionView
     }
 }
 
-extension GridViewController: UITextFieldDelegate
-{
+extension GridViewController: UITextFieldDelegate {
     // MARK:- ---> Textfield Delegates
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
-    {
-        return true;
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
     }
     
-    func textFieldShouldClear(_ textField: UITextField) -> Bool
-    {
-        return true;
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool
-    {
-        return true;
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
-    {
-        return true;
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
-    {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder();
         return true;
     }
     // MARK: Textfield Delegates <---
 }
 
-extension GridViewController: BluetoothSerialDelegate
-{
-    //MARK: BluetoothSerialDelegate
+extension GridViewController: BluetoothSerialDelegate {
+    // MARK: BluetoothSerialDelegate
     
-    func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?)
-    {
+    func serialDidDisconnect(_ peripheral: CBPeripheral, error: NSError?) {
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         hud?.mode = MBProgressHUDMode.text
         hud?.labelText = "Disconnected"
@@ -488,10 +413,8 @@ extension GridViewController: BluetoothSerialDelegate
         connectButton.image = #imageLiteral(resourceName: "Bluetooth")
     }
     
-    func serialDidChangeState()
-    {
-        if serial.centralManager.state != .poweredOn
-        {
+    func serialDidChangeState() {
+        if serial.centralManager.state != .poweredOn {
             let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
             hud?.mode = MBProgressHUDMode.text
             hud?.labelText = "Bluetooth turned off"
