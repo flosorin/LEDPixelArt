@@ -325,7 +325,7 @@ extension GridViewController: UICollectionViewDataSource
         let index = (indexPath as NSIndexPath).row
         
         if collectionView == self.ledsGridCollectionView {
-            let cellWidth = (ledsGridCollectionView.bounds.width - gridMargin * (pixelCellsPerRow + 1)) / pixelCellsPerRow
+            let cellWidth = (self.view.bounds.width - gridMargin * (pixelCellsPerRow + 1)) / pixelCellsPerRow
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: pixelReuseIdentifier, for: indexPath as IndexPath)
             cell.backgroundColor = UIColor(red: CGFloat((RGBGridArray[index] & 0b100) >> 2), green: CGFloat((RGBGridArray[index] & 0b010) >> 1), blue: CGFloat(RGBGridArray[index] & 0b001), alpha: 1.0)
             cell.layer.borderWidth = 1
@@ -351,7 +351,7 @@ extension GridViewController: UICollectionViewDataSource
 extension GridViewController: UICollectionViewDelegateFlowLayout {
     func initLayout() {
         guard let gridFlowLayout = ledsGridCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
-        let gridItemWidth = (ledsGridCollectionView.bounds.width - gridMargin * (pixelCellsPerRow + 1)) / pixelCellsPerRow
+        let gridItemWidth = (self.view.bounds.width - gridMargin * (pixelCellsPerRow + 1)) / pixelCellsPerRow
         gridFlowLayout.minimumInteritemSpacing = gridMargin
         gridFlowLayout.minimumLineSpacing = gridMargin
         gridFlowLayout.sectionInset.top = gridMargin
