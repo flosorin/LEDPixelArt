@@ -362,7 +362,7 @@ extension GridViewController: UICollectionViewDelegateFlowLayout {
         
         guard let colorFlowLayout = selectColorCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         colorFlowLayout.minimumInteritemSpacing = (selectColorCollectionView.bounds.width - colorCellsPerRow * colorCellSize) / (colorCellsPerRow - 1)
-        colorFlowLayout.minimumLineSpacing = selectColorCollectionView.bounds.height  - 2 * colorCellSize
+        colorFlowLayout.minimumLineSpacing = 2 * colorCellSize
         colorFlowLayout.sectionInset.top = 0
         colorFlowLayout.sectionInset.bottom = 0
         colorFlowLayout.sectionInset.left = 0
